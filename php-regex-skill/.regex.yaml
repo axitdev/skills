@@ -1,0 +1,67 @@
+# =============================================================================
+# PHP Regex Workshop Configuration
+# =============================================================================
+#
+# Place this file in your project root as `.regex-workshop.yaml` or
+# `.regex-workshop.yml`. All fields are optional — defaults are shown below.
+#
+
+# -----------------------------------------------------------------------------
+# Output — where to save pattern documentation
+# -----------------------------------------------------------------------------
+output:
+  # Directory for saved regex pattern documentation files
+  patterns_dir: ./docs/regex
+
+  # Path to the pattern library index
+  index_file: ./docs/regex/index.md
+
+# -----------------------------------------------------------------------------
+# Test — how to generate test files
+# -----------------------------------------------------------------------------
+test:
+  # Which test framework to generate for.
+  # Values: auto, pest, phpunit, codeception
+  #
+  # `auto` detects from composer.json:
+  #   - pestphp/pest found → Pest
+  #   - otherwise → PHPUnit
+  #
+  framework: auto
+
+  # Where to save generated test files
+  #
+  # Examples:
+  #   PHPUnit/Pest: ./tests/Unit/Regex
+  #   Codeception: ./tests/unit/Regex
+  #
+  output_dir: ./tests/Unit/Regex
+
+# -----------------------------------------------------------------------------
+# Defaults — pattern building preferences
+# -----------------------------------------------------------------------------
+defaults:
+  # Default regex delimiter character.
+  # Common choices: / # ~ @
+  #
+  # Use something other than / if your patterns frequently contain slashes
+  # (e.g. URL patterns → use # or ~)
+  #
+  delimiter: /
+
+  # Default modifiers appended to every new pattern.
+  # `u` (UTF-8) is strongly recommended for any project handling user input.
+  #
+  # Common combinations:
+  #   u — UTF-8 mode (recommended baseline)
+  #   ui — UTF-8 + case-insensitive
+  #   ux — UTF-8 + free-spacing (for complex, documented patterns)
+  #   ums — UTF-8 + multiline + dotall (for multi-line text processing)
+  #
+  modifiers: u
+
+  # PCRE version hint. Affects which features are suggested.
+  #   pcre2 — PHP 7.3+ (default, most projects)
+  #   pcre — PHP < 7.3 (legacy, lacks some features like (*SKIP)(*FAIL))
+  #
+  flavor: pcre2

@@ -4,6 +4,11 @@ A collection of work-in-progress custom skills for [Claude Code](https://docs.an
 
 ## Skills
 
+| Skill | Description |
+|---|---|
+| [php-diagrams](#php-diagrams) | Generate Mermaid diagrams from PHP codebases |
+| [php-regex](#php-regex) | Interactive PHP regex builder, debugger, and tester |
+
 ### php-diagrams
 
 Generate Mermaid diagrams from PHP codebases by researching actual project code.
@@ -20,6 +25,27 @@ Generate Mermaid diagrams from PHP codebases by researching actual project code.
 - `php-diagrams-skill/SKILL.md` — skill definition and workflow
 - `php-diagrams-skill/.diagrams.yaml` — configuration template with all available options
 - `php-diagrams-skill/references/mermaid-syntax.md` — Mermaid syntax reference for all 16 diagram types
+
+### php-regex
+
+Interactive PHP regex builder, debugger, and tester. Builds patterns from natural language descriptions, explains existing patterns, generates test suites, and catches common pitfalls.
+
+- Build regex from natural language descriptions with incremental refinement
+- Explain and visually break down existing patterns
+- Debug failing patterns with step-by-step diagnosis
+- Optimize patterns for performance (backtracking, possessive quantifiers, anchoring)
+- Generate Pest or PHPUnit test cases for any pattern
+- Save patterns to a documented library with auto-maintained index
+- Searches your codebase for real sample data and existing patterns before building
+- Configurable via `.regex-workshop.yaml` in your project root
+
+**Usage:** Ask Claude Code to build, explain, debug, optimize, or test any PHP regex. The skill searches the project for real data and existing patterns, builds incrementally, and always explains what each part does.
+
+**Files:**
+- `php-regex-skill/SKILL.md` — skill definition and workflow
+- `php-regex-skill/.regex.yaml` — configuration template
+- `php-regex-skill/references/php-regex-cheatsheet.md` — PHP regex syntax reference and PCRE features
+- `php-regex-skill/references/common-patterns.md` — ready-to-use patterns for common formats
 
 ## Installation
 
