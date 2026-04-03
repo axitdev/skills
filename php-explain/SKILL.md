@@ -277,7 +277,7 @@ If the same entry point leads to different flows based on conditions, explain th
 "This endpoint behaves differently depending on the user's role:
 - For `admin`: [flow A]
 - For `user`: [flow B]
-- For `guest`: returns 401"
+- For `guest`: returns 401
 
 **Can't find the entry point:**
 Ask the user: "I can see `PaymentService` but I'm not sure how it's triggered. Is it called
