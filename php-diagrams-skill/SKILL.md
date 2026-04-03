@@ -24,9 +24,9 @@ Markdown files.
 
 ## Configuration
 
-Before starting the workflow, look for `.diagrams.yaml` (or `.diagrams.yml`) in the project root.
+Before starting the workflow, look for `.mermaid-diagrams.yaml` (or `.mermaid-diagrams.yml`) in the project root.
 This file lets the user customize paths, sources, and behavior. If the file doesn't exist, use
-defaults. See the bundled `.diagrams.yaml` for all available options with documentation.
+defaults. See the bundled `.mermaid-diagrams.yaml` for all available options with documentation.
 
 **Key config fields and their defaults:**
 
@@ -45,7 +45,7 @@ defaults. See the bundled `.diagrams.yaml` for all available options with docume
 
 **Config loading rules:**
 
-1. Read `.diagrams.yaml` / `.diagrams.yml` from project root
+1. Read `.mermaid-diagrams.yaml` / `.mermaid-diagrams.yml` from project root
 2. If it doesn't exist, use all defaults — don't ask the user to create one
 3. Any missing field uses its default value
 4. If `sources.include` is empty or not set, research the entire project (minus excludes)
@@ -63,7 +63,7 @@ user. Do not guess or assume.
 
 ### Step 0: Load configuration
 
-1. Check for `.diagrams.yaml` or `.diagrams.yml` in the project root
+1. Check for `.mermaid-diagrams.yaml` or `.mermaid-diagrams.yml` in the project root
 2. If found, parse it and merge with defaults
 3. If `repositories` has entries, resolve them:
    - Local paths: verify they exist

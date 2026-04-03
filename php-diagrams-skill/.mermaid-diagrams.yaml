@@ -2,7 +2,7 @@
 # PHP Diagrams Skill Configuration
 # =============================================================================
 #
-# Place this file in your project root as `.diagrams.yaml` or `.diagrams.yml`.
+# Place this file in your project root as `.mermaid-diagrams.yaml` or `.mermaid-diagrams.yml`.
 # All fields are optional — defaults are shown below.
 # Delete or comment out anything you don't need to customize.
 #

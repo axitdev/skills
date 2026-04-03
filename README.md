@@ -15,7 +15,7 @@ Generate Mermaid diagrams from PHP codebases by researching actual project code.
 
 - Supports all 16 Mermaid diagram types (sequence, class, ERD, state, flowchart, and more)
 - Works with Laravel, Symfony, plain PHP, or any other framework
-- Configurable via `.diagrams.yaml` in your project root
+- Configurable via `.mermaid-diagrams.yaml` in your project root
 - Outputs organized Markdown files with an auto-maintained index
 - Multi-repo support for cross-service diagram generation
 
@@ -23,7 +23,7 @@ Generate Mermaid diagrams from PHP codebases by researching actual project code.
 
 **Files:**
 - `php-diagrams-skill/SKILL.md` — skill definition and workflow
-- `php-diagrams-skill/.diagrams.yaml` — configuration template with all available options
+- `php-diagrams-skill/.mermaid-diagrams.yaml` — configuration template with all available options
 - `php-diagrams-skill/references/mermaid-syntax.md` — Mermaid syntax reference for all 16 diagram types
 
 ### php-regex
