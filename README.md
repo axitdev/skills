@@ -14,6 +14,7 @@ PRs and issues are welcome if you want to discuss ideas, suggest improvements, o
 | [php-regex](#php-regex) | Interactive PHP regex builder, debugger, and tester | draft |
 | [lucid-diagrams](#lucid-diagrams) | Generate Lucidchart/Lucidspark diagrams from PHP codebases via MCP | draft |
 | [drawio-diagrams](#drawio-diagrams) | Generate Draw.io diagrams from PHP codebases via MCP | draft |
+| [php-explain](#php-explain) | Explain how parts of a PHP system work by tracing actual code | draft |
 
 ### php-diagrams
 
@@ -87,6 +88,23 @@ Create diagrams in Draw.io by researching actual PHP project code and generating
 **Files:**
 - `drawio-diagrams/SKILL.md` — skill definition and workflow
 - `drawio-diagrams/references/drawio-formats.md` — Draw.io XML, Mermaid, and CSV format reference
+
+### php-explain
+
+Explain how parts of a PHP system work by tracing through actual code. Follows call chains, connects components, explains design decisions, and presents a coherent narrative.
+
+- Traces entire call chains from entry point to database and back
+- Explains the "why" behind design decisions, not just the "what"
+- Supports multiple explanation types: flow traces, component overviews, data lifecycles, integration maps
+- Works with Laravel, Symfony, plain PHP, or any other framework
+- Saves explanations to a documented library with auto-maintained index
+- Configurable via `.php-explain.yaml` in your project root
+
+**Usage:** Ask Claude Code to explain how any part of your PHP codebase works — a flow, a service, a class, or how components connect. The skill traces through the actual code and presents a coherent narrative.
+
+**Files:**
+- `php-explain/SKILL.md` — skill definition and workflow
+- `php-explain/references/explanation-patterns.md` — templates for different explanation types
 
 ## Installation
 

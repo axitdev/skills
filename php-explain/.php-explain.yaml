@@ -1,0 +1,50 @@
+# =============================================================================
+# PHP Explain Skill Configuration
+# =============================================================================
+#
+# Place this file in your project root as `.php-explain.yaml`.
+# All fields are optional — defaults are shown below.
+#
+
+# -----------------------------------------------------------------------------
+# Output — where to save explanation files (when user requests saving)
+# -----------------------------------------------------------------------------
+output:
+  # Directory for saved explanations. Type subdirectories are created inside
+  # (e.g. flow/, component/, integration/, etc.)
+  explanations_dir: ./docs/explanations
+
+  # Index file listing all saved explanations
+  index_file: ./docs/explanations/index.md
+
+# -----------------------------------------------------------------------------
+# Sources — which parts of the codebase to analyze
+# -----------------------------------------------------------------------------
+sources:
+  # Directories to include (empty = entire project minus excludes)
+  #
+  # Examples:
+  #   Laravel:  [./app, ./routes, ./database, ./config]
+  #   Symfony:  [./src, ./config, ./migrations]
+  #
+  include: []
+
+  # Directories to skip
+  exclude:
+    - vendor
+    - node_modules
+    - .git
+    - var/cache
+    - var/log
+    - storage/framework
+    - storage/logs
+    - tests
+    - test
+    - .idea
+    - .vscode
+
+# -----------------------------------------------------------------------------
+# Framework — skip auto-detection
+# -----------------------------------------------------------------------------
+# Values: auto, laravel, symfony, plain
+framework: auto
