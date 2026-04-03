@@ -1,0 +1,163 @@
+# =============================================================================
+# PHP Diagrams Skill Configuration
+# =============================================================================
+#
+# Place this file in your project root as `.diagrams.yaml` or `.diagrams.yml`.
+# All fields are optional — defaults are shown below.
+# Delete or comment out anything you don't need to customize.
+#
+
+# -----------------------------------------------------------------------------
+# Output — where to store generated diagrams
+# -----------------------------------------------------------------------------
+output:
+  # Directory for all diagrams. Subdirectories per type are created inside
+  # (e.g. sequence/, class/, erd/, etc.)
+  diagrams_dir: ./docs/diagrams
+
+  # Path to the index file that lists all diagrams with links and descriptions
+  index_file: ./docs/diagrams/index.md
+
+# -----------------------------------------------------------------------------
+# Sources — which parts of the codebase to analyze
+# -----------------------------------------------------------------------------
+sources:
+  # Directories to include in research (relative to project root).
+  # If empty or not set, the entire project root is scanned (minus excludes).
+  #
+  # Examples for different project types:
+  #
+  # Laravel:
+  #   include:
+  #     - ./app
+  #     - ./routes
+  #     - ./database
+  #     - ./config
+  #
+  # Symfony:
+  #   include:
+  #     - ./src
+  #     - ./config
+  #     - ./migrations
+  #
+  # Monorepo:
+  #   include:
+  #     - ./services/api/src
+  #     - ./services/worker/src
+  #     - ./packages/shared/src
+  #
+  include: []
+
+  # Directories and patterns to skip during research
+  exclude:
+    - vendor
+    - node_modules
+    - .git
+    - var/cache
+    - var/log
+    - storage/framework
+    - storage/logs
+    - tests
+    - test
+    - .idea
+    - .vscode
+
+# -----------------------------------------------------------------------------
+# Repositories — additional codebases to research alongside the main project
+# -----------------------------------------------------------------------------
+# Useful for multi-repo architectures where flows span multiple services,
+# shared libraries, or SDKs.
+#
+# Each entry can be:
+#   - A local path (relative to project root or absolute)
+#   - A git remote URL (cloned to a temp dir before research)
+#
+# The `label` appears in diagram node names and Key Files sections so readers
+# know which repo a component belongs to.
+#
+repositories: []
+#
+#  # Local sibling repo
+#  - path: ../payment-gateway
+#    label: Payment Gateway
+#
+#  # Shared library in the same monorepo
+#  - path: ./packages/common
+#    label: Common Package
+#
+#  # Remote git repo (cloned on each run)
+#  - url: https://github.com/your-org/shared-sdk.git
+#    branch: main
+#    label: Shared SDK
+#
+#  # Private repo with specific branch
+#  - url: git@github.com:your-org/internal-api.git
+#    branch: develop
+#    label: Internal API
+
+# -----------------------------------------------------------------------------
+# Framework — skip auto-detection if you know your stack
+# -----------------------------------------------------------------------------
+# Values: auto, laravel, symfony, plain
+# Default: auto (detects from project files like artisan, bin/console, etc.)
+#
+framework: auto
+
+# -----------------------------------------------------------------------------
+# Defaults — pre-configured behavior for diagram generation
+# -----------------------------------------------------------------------------
+defaults:
+  # Default diagram types to suggest when the user doesn't specify.
+  # The skill still asks for confirmation, but these are pre-selected.
+  # Empty list means no pre-selection — the skill asks every time.
+  #
+  # Available types:
+  #   sequence, class, state, erd, flowchart, activity, component,
+  #   deployment, data-flow, mind-map, timeline, git-graph, block,
+  #   sankey, packet, architecture
+  #
+  types: []
+  #
+  # Example: always suggest sequence + class for a typical API project:
+  #   types:
+  #     - sequence
+  #     - class
+  #
+  # Example: for a DB-heavy project:
+  #   types:
+  #     - erd
+  #     - class
+  #     - state
+
+  # Detail level controls how much information goes into each diagram.
+  #
+  #   overview  — high-level boxes, no method names, major flows only.
+  #              Good for README docs and onboarding.
+  #
+  #   standard  — class/method names, happy path + key error paths.
+  #              Good for developer reference. (default)
+  #
+  #   detailed  — every method call, all error/edge-case paths,
+  #              middleware, events, queue jobs. Good for deep dives
+  #              and debugging documentation.
+  #
+  detail: standard
+
+  # Whether to include error and edge-case paths in diagrams.
+  # Set to false if you only want happy-path flows.
+  include_error_paths: true
+
+# -----------------------------------------------------------------------------
+# Mermaid — theme and rendering settings
+# -----------------------------------------------------------------------------
+mermaid:
+  # Theme applied to all generated diagrams via Mermaid frontmatter.
+  # Values: default, dark, forest, neutral
+  #
+  # Tips:
+  #   - `default`  — clean look, works well in most Markdown renderers
+  #   - `dark`     — for dark-mode README/docs
+  #   - `forest`   — green tones, good for environmental/nature projects ;)
+  #   - `neutral`  — minimal colors, good for printing
+  #
+  theme: default
