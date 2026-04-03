@@ -4,10 +4,10 @@ A collection of work-in-progress custom skills for [Claude Code](https://docs.an
 
 ## Skills
 
-| Skill | Description |
-|---|---|
-| [php-diagrams](#php-diagrams) | Generate Mermaid diagrams from PHP codebases |
-| [php-regex](#php-regex) | Interactive PHP regex builder, debugger, and tester |
+| Skill | Description | State |
+|---|---|---|
+| [php-diagrams](#php-diagrams) | Generate Mermaid diagrams from PHP codebases | alpha test |
+| [php-regex](#php-regex) | Interactive PHP regex builder, debugger, and tester | alpha test |
 
 ### php-diagrams
 
