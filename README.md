@@ -9,10 +9,11 @@ PRs and issues are welcome if you want to discuss ideas, suggest improvements, o
 ## Skills
 
 | Skill | Description | State      |
-|---|---|------------|
-| [php-diagrams](#php-diagrams) | Generate Mermaid diagrams from PHP codebases | alpha test |
-| [php-regex](#php-regex) | Interactive PHP regex builder, debugger, and tester | alpha test |
+|---|---|---|
+| [php-diagrams](#php-diagrams) | Generate Mermaid diagrams from PHP codebases | draft |
+| [php-regex](#php-regex) | Interactive PHP regex builder, debugger, and tester | draft |
 | [lucid-diagrams](#lucid-diagrams) | Generate Lucidchart/Lucidspark diagrams from PHP codebases via MCP | draft |
+| [drawio-diagrams](#drawio-diagrams) | Generate Draw.io diagrams from PHP codebases via MCP | draft |
 
 ### php-diagrams
 
@@ -70,6 +71,22 @@ Create diagrams in Lucidchart and Lucidspark by researching actual PHP project c
 - `lucid-diagrams-skill/SKILL.md` — skill definition and workflow
 - `lucid-diagrams-skill/.lucid-diagrams.yaml` — configuration template
 - `lucid-diagrams-skill/references/lucid-conventions.md` — Lucid MCP tool usage and formatting conventions
+
+### drawio-diagrams
+
+Create diagrams in Draw.io by researching actual PHP project code and generating them via the Draw.io MCP server. Supports Mermaid (recommended default), native XML, and CSV input formats.
+
+- Works with multiple Draw.io MCP server variants (official tool server, MCP app server, community server)
+- Three input formats: Mermaid (recommended), XML (precise control), CSV (tabular data)
+- Auto-discovers which MCP server variant is connected and adapts accordingly
+- Works with Laravel, Symfony, plain PHP, or any other framework
+- Falls back to Mermaid markdown if no Draw.io MCP server is available
+
+**Usage:** Ask Claude Code to create a diagram in Draw.io for any part of your PHP codebase. Requires a Draw.io MCP server to be connected.
+
+**Files:**
+- `drawio-diagrams/SKILL.md` — skill definition and workflow
+- `drawio-diagrams/references/drawio-formats.md` — Draw.io XML, Mermaid, and CSV format reference
 
 ## Installation
 

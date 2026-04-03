@@ -1,0 +1,80 @@
+# =============================================================================
+# Draw.io Diagrams Skill Configuration
+# =============================================================================
+#
+# Place this file in your project root as `.drawio-diagrams.yaml`.
+# All fields are optional — defaults are shown below.
+#
+
+# -----------------------------------------------------------------------------
+# Output — where to save local diagram files
+# -----------------------------------------------------------------------------
+output:
+  # Directory for diagram files (.drawio and .md)
+  diagrams_dir: ./docs/diagrams
+
+  # Local index tracking Draw.io diagrams generated from this codebase
+  index_file: ./docs/diagrams/drawio-index.md
+
+# -----------------------------------------------------------------------------
+# Sources — which parts of the codebase to analyze
+# -----------------------------------------------------------------------------
+sources:
+  # Directories to include (empty = entire project minus excludes)
+  #
+  # Examples:
+  #   Laravel:  [./app, ./routes, ./database, ./config]
+  #   Symfony:  [./src, ./config, ./migrations]
+  #
+  include: []
+
+  # Directories to skip
+  exclude:
+    - vendor
+    - node_modules
+    - .git
+    - var/cache
+    - var/log
+    - storage/framework
+    - storage/logs
+    - tests
+    - test
+    - .idea
+    - .vscode
+
+# -----------------------------------------------------------------------------
+# Repositories — additional local codebases to research
+# -----------------------------------------------------------------------------
+repositories: []
+#  - path: ../payment-gateway
+#    label: Payment Gateway
+
+# -----------------------------------------------------------------------------
+# Framework — skip auto-detection
+# -----------------------------------------------------------------------------
+# Values: auto, laravel, symfony, plain
+framework: auto
+
+# -----------------------------------------------------------------------------
+# Defaults — diagram generation preferences
+# -----------------------------------------------------------------------------
+defaults:
+  # Preferred creation format:
+  #   mermaid — reliable default, works for most diagram types
+  #   xml     — full control, access to all Draw.io shape libraries
+  #   auto    — skill picks based on diagram type
+  #
+  format: mermaid
+
+  # Detail level:
+  #   overview  — high-level, no method names
+  #   standard  — class/method names, happy + key error paths
+  #   detailed  — every call, all error paths, middleware, events
+  #
+  detail: standard
+
+  # Include error and edge-case paths
+  include_error_paths: true
+
+  # Open diagrams in dark mode
+  dark_mode: false
