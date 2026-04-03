@@ -1,13 +1,18 @@
 # Claude Code Skills
 
-A collection of work-in-progress custom skills for [Claude Code](https://docs.anthropic.com/en/docs/claude-code).
+This is my public lab for custom [Claude Code](https://docs.anthropic.com/en/docs/claude-code) skills. Everything here is experimental and work-in-progress — some skills are serious attempts, some are just me testing things out, and some exist purely for fun.
+
+Nothing is production-ready. Use at your own risk, break things, have fun.
+
+PRs and issues are welcome if you want to discuss ideas, suggest improvements, or share your own experiments.
 
 ## Skills
 
-| Skill | Description | State |
-|---|---|---|
+| Skill | Description | State      |
+|---|---|------------|
 | [php-diagrams](#php-diagrams) | Generate Mermaid diagrams from PHP codebases | alpha test |
 | [php-regex](#php-regex) | Interactive PHP regex builder, debugger, and tester | alpha test |
+| [lucid-diagrams](#lucid-diagrams) | Generate Lucidchart/Lucidspark diagrams from PHP codebases via MCP | draft |
 
 ### php-diagrams
 
@@ -46,6 +51,25 @@ Interactive PHP regex builder, debugger, and tester. Builds patterns from natura
 - `php-regex-skill/.regex.yaml` — configuration template
 - `php-regex-skill/references/php-regex-cheatsheet.md` — PHP regex syntax reference and PCRE features
 - `php-regex-skill/references/common-patterns.md` — ready-to-use patterns for common formats
+
+### lucid-diagrams
+
+Create diagrams in Lucidchart and Lucidspark by researching actual PHP project code and generating them via the Lucid MCP server.
+
+- Creates diagrams directly in Lucidchart or Lucidspark via MCP integration
+- Auto-selects product: Lucidchart for formal diagrams, Lucidspark for collaborative ones
+- Works with Laravel, Symfony, plain PHP, or any other framework
+- Searches and updates existing Lucid diagrams across sessions
+- Multi-repo support for cross-service diagram generation
+- Configurable via `.lucid-diagrams.yaml` in your project root
+- Falls back to php-diagrams skill (Mermaid) if Lucid is unavailable
+
+**Usage:** Ask Claude Code to create a diagram in Lucidchart or Lucidspark for any part of your PHP codebase. Requires the Lucid MCP server to be connected and authenticated.
+
+**Files:**
+- `lucid-diagrams-skill/SKILL.md` — skill definition and workflow
+- `lucid-diagrams-skill/.lucid-diagrams.yaml` — configuration template
+- `lucid-diagrams-skill/references/lucid-conventions.md` — Lucid MCP tool usage and formatting conventions
 
 ## Installation
 

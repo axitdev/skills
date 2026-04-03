@@ -1,0 +1,91 @@
+# =============================================================================
+# Lucid Diagrams Skill Configuration
+# =============================================================================
+#
+# Place this file in your project root as `.lucid-diagrams.yaml`.
+# All fields are optional — defaults are shown below.
+#
+
+# -----------------------------------------------------------------------------
+# Output — local tracking of Lucid diagrams
+# -----------------------------------------------------------------------------
+output:
+  # Local index file mapping Lucid documents to code areas.
+  # This allows the skill to find existing diagrams across sessions.
+  index_file: ./docs/diagrams/lucid-index.md
+
+# -----------------------------------------------------------------------------
+# Sources — which parts of the codebase to analyze
+# -----------------------------------------------------------------------------
+sources:
+  # Directories to include in research (relative to project root).
+  # If empty, the entire project is scanned (minus excludes).
+  #
+  # Examples:
+  #   Laravel:  [./app, ./routes, ./database, ./config]
+  #   Symfony:  [./src, ./config, ./migrations]
+  #
+  include: []
+
+  # Directories to skip during research
+  exclude:
+    - vendor
+    - node_modules
+    - .git
+    - var/cache
+    - var/log
+    - storage/framework
+    - storage/logs
+    - tests
+    - test
+    - .idea
+    - .vscode
+
+# -----------------------------------------------------------------------------
+# Repositories — additional local codebases to research
+# -----------------------------------------------------------------------------
+# Useful for monorepos or related services.
+# Note: only local paths are supported (no git clone — use php-diagrams for that).
+#
+repositories: []
+#  - path: ../payment-gateway
+#    label: Payment Gateway
+#  - path: ./packages/common
+#    label: Common Package
+
+# -----------------------------------------------------------------------------
+# Framework — skip auto-detection
+# -----------------------------------------------------------------------------
+# Values: auto, laravel, symfony, plain
+framework: auto
+
+# -----------------------------------------------------------------------------
+# Lucid — Lucid-specific settings
+# -----------------------------------------------------------------------------
+lucid:
+  # Which Lucid product to use.
+  # Values: auto, lucidchart, lucidspark
+  #   auto — picks based on diagram type (see SKILL.md for logic)
+  #
+  product: auto
+
+  # Default Lucid folder for new diagrams.
+  # Leave empty to use the account default.
+  #
+  # Example: "Engineering/Architecture Diagrams"
+  #
+  default_folder: ""
+
+# -----------------------------------------------------------------------------
+# Defaults — diagram generation preferences
+# -----------------------------------------------------------------------------
+defaults:
+  # Detail level:
+  #   overview  — high-level, no method names
+  #   standard  — class/method names, happy + key error paths
+  #   detailed  — every call, all error paths, middleware, events
+  #
+  detail: standard
+
+  # Include error and edge-case paths in diagrams
+  include_error_paths: true
