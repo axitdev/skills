@@ -286,8 +286,6 @@ var_dump($matches);
 
 Improve a regex for performance.
 
-**Step 1: Analyze the pattern**
-
 **Step 1: Analyze the pattern and its usage**
 
 Search the codebase to understand how this pattern is used:
